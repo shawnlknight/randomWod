@@ -11,10 +11,26 @@ $icon-font-path: "/bower_components/bootstrap-sass-official/vendor/assets/fonts/
     padding: 0.2em 0;
 }
 
+.nav li a {
+    color: #000;
+}
+
+.nav-tabs > li.active > a, .nav-pills > li.active > a:hover, .nav-pills > li.active > a:focus {
+    color: #fff;
+    background-color: #000;
+     -webkit-transition: all 1s ease;
+    transition: all 1s ease;
+}
+
 /* Space out content a bit */
 body {
     padding-top: 20px;
     padding-bottom: 20px;
+    // background: #ddd;
+    background: url(/images/barbell.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
 }
 
 /* Everything but the jumbotron gets side spacing for mobile first views */
@@ -27,7 +43,8 @@ body {
 
 /* Custom page header */
 .header {
-    border-bottom: 1px solid #e5e5e5;
+    // border-bottom: 1px solid #e5e5e5;
+    padding-bottom: 70px;
 
     /* Make the masthead heading the same height as the navigation */
     h3 {
@@ -45,16 +62,23 @@ body {
     border-top: 1px solid #e5e5e5;
 }
 
+.inc {
+    margin-left: 75%;
+}
+
 .container-narrow > hr {
     margin: 30px 0;
 }
 
+.container {
+    background: #fff;
+    max-width: 950px;
+    opacity: 0.97;
+}
+
 /* Main marketing message and sign up button */
 .jumbotron {
-    background: black;
-    max-width: 200px;
-    max-height: 200px;
-    margin-left: 30%;
+    background: #fff;
     text-align: center;
     border-bottom: 1px solid #e5e5e5;
     .btn {
@@ -66,6 +90,7 @@ body {
 /* Supporting marketing content */
 .marketing {
     margin: 40px 0;
+    min-height: 150px;
     p + h4 {
         margin-top: 28px;
     }
@@ -74,7 +99,8 @@ body {
 /* Responsive: Portrait tablets and up */
 @media screen and (min-width: 768px) {
     .container {
-        max-width: 730px;
+        
+        border: 1px solid #e5e5e5;
     }
 
     /* Remove the padding we set earlier */
@@ -95,3 +121,9 @@ body {
         border-bottom: 0;
     }
 }
+
+.form-control {
+    margin-bottom: 20px;
+    background: #f1f1f1;
+}
+
