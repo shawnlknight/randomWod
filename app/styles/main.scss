@@ -10,14 +10,16 @@ $icon-font-path: "/bower_components/bootstrap-sass-official/vendor/assets/fonts/
     color: #000;
     padding: 0.2em 0;
 }
-
+nav {
+    background-color: #000;
+}
 .nav li a {
-    color: #000;
+    color: #fff;
 }
 
 .nav-tabs > li.active > a, .nav-pills > li.active > a:hover, .nav-pills > li.active > a:focus {
-    color: #fff;
-    background-color: #000;
+    color: #000;
+    background-color: #fff;
      -webkit-transition: all 1s ease;
     transition: all 1s ease;
 }
@@ -43,7 +45,7 @@ body {
 /* Custom page header */
 .header {
     // border-bottom: 1px solid #e5e5e5;
-    padding-bottom: 70px;
+    padding-bottom: 0;
 
     /* Make the masthead heading the same height as the navigation */
     h3 {
@@ -75,18 +77,24 @@ body {
 }
 
 .container {
-    background: #fff;
+    background: #000;
     max-width: 1050px;
     min-height: 1000px;
-    opacity: 0.98;
+    opacity: 0.97;
     padding: 0;
+}
+
+.container .jumbotron {
+    border-radius: 0;
 }
 
 /* Main marketing message and sign up button */
 .jumbotron {
-    background: #fff;
+    color: #fff;
+    background-color: #000;
     text-align: center;
     border-bottom: 1px solid #e5e5e5;
+    height: 250px;
     .btn {
         font-size: 21px;
         padding: 14px 24px;
@@ -95,8 +103,9 @@ body {
 
 /* Supporting marketing content */
 .marketing {
+    background-color: #fff;
     margin: 40px 0;
-    min-height: 150px;
+    min-height: 800px;
     p + h4 {
         margin-top: 28px;
     }
@@ -127,8 +136,14 @@ body {
     }
 }
 
+.titleName {
+    color: #12ad04;
+    padding-top: 0;
+    padding-bottom: 10px;
+}
+
 .form-control {
-    margin-bottom: 20px;
+    margin-bottom: 10px;
     background: #f1f1f1;
 }
 
@@ -137,20 +152,21 @@ body {
 }
 
 .wodLibrary {
+    padding-top: 20px;
     padding-left: 320px;
-}
-
-.header li {
-    clear: both;
+    h3 {
+        color: #12ad04;
+    }
 }
 
 article {
+    margin-left: 50px;
     padding-bottom: 20px;
     border-bottom: 1px solid #e5e5e5;
 }
 
 textarea.form-control {
-    min-height: 250px;
+    min-height: 200px;
 }
 
 .updateWod {
@@ -162,6 +178,15 @@ textarea.form-control {
 .deleteWod {
     cursor: pointer;
 }
+
+.btn-lg {
+    border-radius: 50%;
+}
+
+.randomWod {
+    margin-left: 50px;
+}
+
 
 
 

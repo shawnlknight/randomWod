@@ -77,18 +77,12 @@ var wodApp = {
 			},
 			success: function(data, dataType, jqXHR) {
 
-			var randomizer = Math.floor(Math.random()*data.length);
-			var item = data[randomizer];
+			var randomizer = _.random(0, data.length);
+			// var randomizer = Math.floor(Math.random()*data.length);
+			var workout = window.wod = data[randomizer];
+			console.log(workout);
 
-			$.each(data, function(index,item) {
-    		// var template = item.title + item.content + '<br />'; 
-
-    		wodApp.render($(".randomWod"), Templates.wod, item);
-    		});
-
-
-
-			
+    		wodApp.render($(".randomWod"), Templates.random, workout);			
 
 			}
 		});

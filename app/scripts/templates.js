@@ -1,5 +1,6 @@
 Templates = {};
 
+
 Templates.wod = [
 	"<% _.each(wod, function(wod, index, list) { %>",
 
@@ -14,12 +15,19 @@ Templates.wod = [
 	"</article>",
 	"<% }); %>"
 
+].join("\n");
 
 
+Templates.random = [
 
-
+	"<h3 class=\"wodTitle\"><%= wod.title %></h3>",
+	"<div class=\"wodDescription\">",
+		"<%= wod.content %>",
+	"</div>",
+	"<small><%= wod.date %></small>"
 
 ].join("\n");
+
 
 Templates.update = [
   	"<div class=\"modal-body\">",
