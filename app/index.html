@@ -9,7 +9,6 @@
         <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
         <!-- build:css styles/vendor.css -->
         <!-- bower:css -->
-
         <!-- endbower -->
         <!-- endbuild -->
         <!-- build:css(.tmp) styles/main.css -->
@@ -39,7 +38,7 @@
             <div class="jumbotron">
                 <h1></h1>
                 <p class="lead">Press 'WOD' button to generate random workout</p>
-                <p><a class="btn btn-lg btn-danger" href="#">WOD</a></p>
+                <p><a class="btn btn-lg btn-danger" id="randomButton">WOD</a></p>
             </div>
 
             <div class="row marketing">
@@ -59,6 +58,7 @@
         <!-- build:js scripts/vendor.js -->
         <!-- bower:js -->
         <script src="../bower_components/jquery/dist/jquery.js"></script>
+        <script src="../bower_components/underscore/underscore.js"></script>
         <!-- endbower -->
         <!-- endbuild -->
 
@@ -88,6 +88,7 @@
         <!-- endbuild -->
 
         <!-- build:js({app,.tmp}) scripts/main.js -->
+        <script src="scripts/templates.js"></script>
         <script src="scripts/main.js"></script>
         <!-- endbuild -->
 </body>

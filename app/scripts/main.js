@@ -12,10 +12,31 @@ var wodApp = {
 	},
 
 	initStyling: function() {
-		this.renderWod();
+		this.renderWods();
 	},
 
 	initEvents: function() {
+
+		// Add WOD
+		$(".newWodForm").on("click", "#submitButton", this.addWod);
+
+		// Delete WOD
+		$(".wodList").on("click", ".deleteWod", this.removeWod);
+
+		// Edit WOD
+		$(".wodList").on("click", ".updateWod", function(e) {
+			e.preventDefault();
+			var wodId = $(this).closest("article").data("wodid");
+			wodApp.renderModal(wodId);
+			$("#editWodModal").modal();
+		});
+		$("#editWodModal").on("click", ".submitUpdate", function(e) {
+			var wodId = $("#editWodId").val();
+			wodApp.updateWod(wodId);
+		});
+
+		// Generate Random WOD
+		$("#randomButton").on("click", this.renderRandom);
 
 	},
 
@@ -25,49 +46,74 @@ var wodApp = {
 		$el.html(tmpl);
 	},
 
-	renderRandom: function() {
-
-		$.ajax({
-			url: '',
-			type: 'GET',
-			data: 'json',
-			error: function(jqXHR, status, error) {
-				console.log("random wod failed");
-			},
-			success: function(data, dataType, jqXHR) {
-				
-			}
-		});
-	},
-
 	renderWods: function() {
 
 		$.ajax({
-			url: '',
-			type: 'GET',
-			data: 'json',
+			url: "http://tiy-fee-rest.herokuapp.com/collections/randomWod",
+			type: "GET",
+			data: "json",
 			error: function(jqXHR, status, error) {
 				console.log("render failed");
 			},
 			success: function(data, dataType, jqXHR) {
 
+				var wod = window.wod = data;
+				wodApp.render($(".wodList"), Templates.wod, wod);
+
 			}
 
+		});
+	},
+
+	renderRandom: function(e) {
+		e.preventDefault();
+
+		$.ajax({
+			url: "http://tiy-fee-rest.herokuapp.com/collections/randomWod",
+			type: "GET",
+			data: "json",
+			error: function(jqXHR, status, error) {
+				console.log("random wod failed");
+			},
+			success: function(data, dataType, jqXHR) {
+
+			var randomizer = Math.floor(Math.random()*data.length);
+			var item = data[randomizer];
+
+			$.each(data, function(index,item) {
+    		// var template = item.title + item.content + '<br />'; 
+
+    		wodApp.render($(".randomWod"), Templates.wod, item);
+    		});
+
+
+
+			
+
+			}
 		});
 	},
 
 	addWod: function(e) {
 		e.preventDefault();
 
+		var newWodObj = {
+			title: $("#newWodTitle").val(),
+			date: new Date(),
+			content: $("#wodContent").val().replace(/\r\n|\r|\n/g,"<br />")
+		};
+
 		$.ajax({
-			url: '',
-			type: 'POST',
-			data: ,
-			dataType: 'json',
+			url: "http://tiy-fee-rest.herokuapp.com/collections/randomWod",
+			type: "POST",
+			data: newWodObj,
+			dataType: "json",
 			error: function(jqXHR, status, error) {
 				console.log("add wod failed");
 			},
 			success: function(data, dataType, jqXHR) {
+				$("#newWodTitle").val("");
+				$("#wodContent").val("");
 				wodApp.renderWods();
 
 			}
@@ -75,10 +121,12 @@ var wodApp = {
 	},
 
 	removeWod: function() {
+		var $thisWod = $(this).closest("article");
+	    var wodId = $thisWod.data("wodid");
 
 		$.ajax({
-			url: '',
-			type: 'DELETE',
+			url: "http://tiy-fee-rest.herokuapp.com/collections/randomWod/" + wodId,
+			type: "DELETE",
 			error: function(jqXHR, status, error) {
 				console.log("remove wod failed");
 			},
@@ -89,41 +137,46 @@ var wodApp = {
 		});
 	},
 
-	updateWod: function() {
+	updateWod: function(wodId) {
 
 		var editWod = {
-
+			title: $(".editWodTitle").val(),
+			date: new Date(),
+			content: $(".editContentForm").val().replace(/\r\n|\r|\n/g,"<br />")
 		};
 
 		$.ajax({
-			url: '',
-			type: editWod,
+			url: "http://tiy-fee-rest.herokuapp.com/collections/randomWod/" + wodId,
+			type: "PUT",
+			data: editWod,
 			error: function(jqXHR, status, error) {
 				console.log("update wod failed");
 			},
 			success: function(data, dataType, jqXHR) {
 				console.log("update successful");
+				$("#editWodModal").modal("hide");
 				wodApp.renderWods();
 			}
 		});
 	},
 
-	renderFormDetail: function() {
+	renderModal: function(wodId) {
 
 		$.ajax({
-			url: '',
-			type: 'GET',
-			dataType: 'json',
+			url: "http://tiy-fee-rest.herokuapp.com/collections/randomWod/" + wodId,
+			type: "GET",
+			dataType: "json",
 			error: function(jqXHR, status, error) {
 				console.log("render form failed");
 			},
 			success: function(data, dataType, jqXHR) {
 
-				wodApp.render();
+  				var wod = window.wod = data;
+	  			wodApp.render($("#editWodForm"),Templates.update, wod);
 			}
 		});
 
-	},
+	}
 
 
 

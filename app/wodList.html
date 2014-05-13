@@ -36,34 +36,29 @@
                 
             </div>
 
-            <div class="wodList">
+            <div class="wodLibrary">
 
             <h3>Enter new WOD below</h3>
             
             <div class="newWod">
+            <form class="newWodForm">
                 <!--New WOD form-->
-                <input type="text" class="form-control" placeholder="Title of workout">
-                <div></div>
-                <textarea class="form-control" placeholder="Workout description" rows="10"></textarea>
-                <button type="button" class="btn btn-default btn-sm">Submit Workout</button>
+                <input type="text" class="form-control" id="newWodTitle" placeholder="Title of workout">
+                
+                <textarea class="form-control" id="wodContent" placeholder="Workout description" rows="10"></textarea>
+                <button type="button" class="btn btn-default btn-sm" id="submitButton">Submit Workout</button>
+            </form>
             </div>
+            
             </div>
 
 
             <div class="row marketing">
                 <div class="col-lg-6">
 
-                    <p>List of workouts here</p>
-                    <p>Have edit button next to workouts to generate a modal that would allow user to edit WOD</p>
-                    <p>Have a delete button to remove workout from list</p>
-
-                    <h4>Workout 1</h4>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Debitis, sed, nam delectus magni temporibus vel ut dolores placeat tempore ullam accusamus nemo numquam quisquam minus est ex mollitia labore repellat!</p>
-
-                    <h4>Workout 2</h4>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vero, saepe, iusto suscipit sed voluptate optio nisi! Expedita dolor eum facere magni molestiae excepturi corporis. Nobis, eaque pariatur neque natus molestias!</p>
-
-
+                    <section class="wodList">
+                        <!--List of WODS here-->
+                    </section>
 
                 </div>
             </div>
@@ -76,10 +71,26 @@
         </div>
 
 
+            <!-- begin edit modal -->
+            <div class="modal fade" id="editWodModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+              <div class="modal-dialog">
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <h4 class="modal-title" id="myModalLabel">Edit WOD</h4>
+                  </div>
+                  <form id="editWodForm" action="">
+                 <!-- template renders for this -->
+                  </form>
+                </div>
+              </div>
+            </div>
+
+
 
         <!-- build:js scripts/vendor.js -->
         <!-- bower:js -->
         <script src="../bower_components/jquery/dist/jquery.js"></script>
+        <script src="../bower_components/underscore/underscore.js"></script>
         <!-- endbower -->
         <!-- endbuild -->
 
@@ -109,6 +120,7 @@
         <!-- endbuild -->
 
         <!-- build:js({app,.tmp}) scripts/main.js -->
+        <script src="scripts/templates.js"></script>
         <script src="scripts/main.js"></script>
         <!-- endbuild -->
 </body>
