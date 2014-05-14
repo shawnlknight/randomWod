@@ -75,7 +75,6 @@ body {
 /* Custom page footer */
 .footer {
     background: #000;
-    height: 10px;
     width: 100%;
     margin: 0; 
     bottom: 0; 
@@ -84,7 +83,8 @@ body {
 .inc {
     float: right;
     margin-right: 40px;
-    color: #fff;
+    padding-bottom: 3%;
+    color: #d6d6d6;
 }
 
 .container-narrow > hr {
@@ -116,7 +116,11 @@ body {
     .btn {
         font-size: 30px;
         padding: 14px 14px;
-        border-radius: 40%;
+        border-radius: 50%;
+        background-color: #d6d6d6;
+    }
+    .btn:hover {
+        background-color: #12ad04;
     }
 }
 
@@ -209,6 +213,16 @@ textarea.form-control {
     margin-left: 50%;
     padding-top: 20px;
 }
+
+.submitUpdate {
+    background-color: #12ad04;
+}
+
+#submitButton {
+    font-size: 16px;
+}
+
+
 
 
 

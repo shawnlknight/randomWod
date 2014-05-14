@@ -41,7 +41,7 @@ Templates.update = [
   	"<div class=\"modal-footer\" data-wodId=\"<%= wod._id %>\">",
 	    "<input id=\"editWodId\" type=\"hidden\" value=\"<%= wod._id %>\">",
 	    "<button type=\"button\" class=\"btn btn-default\" data-dismiss=\"modal\">Close</button>",
-	    "<button type=\"button\" class=\"btn btn-danger submitUpdate\">Update</button>",
+	    "<button type=\"button\" class=\"btn btn-default submitUpdate\">Update</button>",
   	"</div>"
 
 
