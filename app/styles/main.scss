@@ -57,6 +57,7 @@ body {
     margin-top: 0;
     padding-bottom: 0;
     background: #000;
+    opacity: 0.8;
     height: 60px;
     width: 100%;
     position: fixed;
@@ -94,9 +95,8 @@ body {
 .container {
     background: #000;
     max-width: 750px;
-    min-height: 1000px;
-    opacity: 0.98;
-    padding-top: 80px;
+    opacity: 0.9;
+    padding-top: 30px;
     padding-left: 0;
     padding-right: 0;
 
@@ -178,10 +178,13 @@ body {
 .wodLibrary {
     padding-top: 20px;
     padding-left: 23%;
-    opacity: 0.89;
     h2 {
         color: #12ad04;
     }
+}
+
+.wodList {
+    font-size: 115%;
 }
 
 article {
@@ -210,8 +213,9 @@ textarea.form-control {
 }
 
 .randomWod {
-    margin-left: 50%;
+    margin-left: 10%;
     padding-top: 20px;
+    font-size: 150%;
 }
 
 .submitUpdate {
@@ -220,6 +224,11 @@ textarea.form-control {
 
 #submitButton {
     font-size: 16px;
+    background-color: #d6d6d6;
+}
+
+#submitButton:hover {
+    background-color: #12ad04;
 }
 
 .lead {
