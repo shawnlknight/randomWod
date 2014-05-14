@@ -93,7 +93,7 @@ body {
 
 .container {
     background: #000;
-    max-width: 900px;
+    max-width: 750px;
     min-height: 1000px;
     opacity: 0.98;
     padding-top: 80px;
@@ -177,7 +177,7 @@ body {
 
 .wodLibrary {
     padding-top: 20px;
-    padding-left: 27%;
+    padding-left: 23%;
     opacity: 0.89;
     h2 {
         color: #12ad04;
@@ -220,6 +220,10 @@ textarea.form-control {
 
 #submitButton {
     font-size: 16px;
+}
+
+.lead {
+    color: #d6d6d6;
 }
 
 
