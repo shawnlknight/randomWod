@@ -14,19 +14,28 @@ nav {
     background-color: #000;
 }
 .nav li a {
-    color: #fff;
+    color: #d6d6d6;
 }
 
-.nav-tabs > li.active > a, .nav-pills > li.active > a:hover, .nav-pills > li.active > a:focus {
+.nav li a:hover {
     color: #000;
-    background-color: #fff;
-     -webkit-transition: all 1s ease;
-    transition: all 1s ease;
+}
+
+.nav-pills {
+    background-color: #000;
+    margin-top: 5px;
+    margin-left: 50px;
+    font-size: 18px;
+}
+
+.nav-pills > li.active > a, .nav-pills > li.active > a:hover, .nav-pills > li.active > a:focus {
+    color: #000;
+    background-color: #d6d6d6;
 }
 
 /* Space out content a bit */
 body {
-    padding-top: 20px;
+    padding-top: 0;
     padding-bottom: 20px;
     // background: #ddd;
     background: url(/images/barbell.png);
@@ -45,7 +54,14 @@ body {
 /* Custom page header */
 .header {
     // border-bottom: 1px solid #e5e5e5;
+    margin-top: 0;
     padding-bottom: 0;
+    background: #000;
+    height: 60px;
+    width: 100%;
+    position: fixed;
+    z-index: 1;
+    // position: fixed;
 
     /* Make the masthead heading the same height as the navigation */
     h3 {
@@ -59,16 +75,15 @@ body {
 /* Custom page footer */
 .footer {
     background: #000;
-    min-height: 70px;
+    height: 10px;
     width: 100%;
-    margin: 0;
-    position: fixed; 
+    margin: 0; 
     bottom: 0; 
 }
 
 .inc {
-    text-align: center;
-    padding-top: 1.5%;
+    float: right;
+    margin-right: 40px;
     color: #fff;
 }
 
@@ -78,10 +93,13 @@ body {
 
 .container {
     background: #000;
-    max-width: 1050px;
+    max-width: 900px;
     min-height: 1000px;
-    opacity: 0.97;
-    padding: 0;
+    opacity: 0.98;
+    padding-top: 80px;
+    padding-left: 0;
+    padding-right: 0;
+
 }
 
 .container .jumbotron {
@@ -96,8 +114,9 @@ body {
     border-bottom: 1px solid #e5e5e5;
     height: 250px;
     .btn {
-        font-size: 21px;
-        padding: 14px 24px;
+        font-size: 30px;
+        padding: 14px 14px;
+        border-radius: 40%;
     }
 }
 
@@ -106,6 +125,7 @@ body {
     background-color: #fff;
     margin: 40px 0;
     min-height: 800px;
+    opacity: 0.87;
     p + h4 {
         margin-top: 28px;
     }
@@ -153,16 +173,22 @@ body {
 
 .wodLibrary {
     padding-top: 20px;
-    padding-left: 320px;
-    h3 {
+    padding-left: 27%;
+    opacity: 0.89;
+    h2 {
         color: #12ad04;
     }
 }
 
 article {
     margin-left: 50px;
+    padding-top: 15px;
     padding-bottom: 20px;
-    border-bottom: 1px solid #e5e5e5;
+    border-bottom: 1px solid #aaa;
+}
+
+.wodDescription {
+    margin-bottom: 10px;
 }
 
 textarea.form-control {
@@ -179,12 +205,9 @@ textarea.form-control {
     cursor: pointer;
 }
 
-.btn-lg {
-    border-radius: 50%;
-}
-
 .randomWod {
-    margin-left: 50px;
+    margin-left: 50%;
+    padding-top: 20px;
 }
 
 
